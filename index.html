@@ -266,3 +266,31 @@
   </div>
 </div>
 
+<style>
+/* Masquer les liens normaux sur mobile */
+@media (max-width: 768px) {
+  .nav-container a { 
+    display: none; 
+  }
+  .hamburger {
+    display: block; /* Afficher le hamburger */
+  }
+}
+
+/* Optionnel : sur desktop, cacher le hamburger */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important; /* Liens visibles sur desktop */
+    position: static;
+    flex-direction: row;
+    gap: 20px;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+}
+</style>
+
