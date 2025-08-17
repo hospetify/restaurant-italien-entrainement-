@@ -172,3 +172,97 @@
 
 </body>
 </html>
+<!-- Menu Hamburger -->
+<style>
+/* Conteneur du menu */
+.nav-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+/* Hamburger */
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  transform: translateY(-10px);
+}
+
+.hamburger::after {
+  transform: translateY(10px);
+}
+
+/* Animation croix */
+.hamburger.active {
+  background-color: transparent;
+}
+
+.hamburger.active::before {
+  transform: rotate(45deg);
+}
+
+.hamburger.active::after {
+  transform: rotate(-45deg);
+}
+
+/* Menu déroulant */
+.nav-links {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+/* Style des liens */
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+</style>
+
+<div class="nav-container">
+  <div class="hamburger" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active');"></div>
+  <div class="nav-links">
+    <a href="#apropos">À propos</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
