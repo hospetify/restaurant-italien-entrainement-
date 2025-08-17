@@ -293,4 +293,22 @@
   }
 }
 </style>
+/* Cacher la barre normale sur mobile */
+@media screen and (max-width: 768px) {
+  .nav-bar {
+    display: none; /* la barre classique disparaît */
+  }
+  .hamburger {
+    display: block; /* le menu hamburger apparaît */
+  }
+}
+
+/* Par défaut (desktop) */
+.nav-bar {
+  display: flex; /* ou ce que tu avais déjà */
+}
+.hamburger {
+  display: none; /* caché sur grand écran */
+}
+
 
